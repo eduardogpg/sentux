@@ -29,5 +29,16 @@ class RetrieveCostumer(BaseModel):
 
 
 class CreateInvoice(BaseModel):
-    price: float = Field(..., gt=0)
+    customer_uuid: str
+    price: float
+
+
+class RetrieveInvoice(BaseModel):
+    price: str
+    price: float
+
+    class Config:
+        orm_mode = True
+        getter_dict = PeeweeGetterDict
+
 
