@@ -12,3 +12,4 @@ class User(Model):
     class Meta:
         database = db
         table_name = 'users'
+

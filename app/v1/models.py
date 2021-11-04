@@ -20,7 +20,6 @@ class CreateCostumer(BaseModel):
 
 
 class RetrieveCostumer(BaseModel):
-    email: str
     uuid: str
 
     class Config:
@@ -28,14 +27,15 @@ class RetrieveCostumer(BaseModel):
         getter_dict = PeeweeGetterDict
 
 
-class CreateInvoice(BaseModel):
+# ------- Transactions -------
+
+class CreateTransaction(BaseModel):
     customer_uuid: str
-    price: float
+    amount: float
 
 
-class RetrieveInvoice(BaseModel):
-    price: str
-    price: float
+class RetrieveTransaction(BaseModel):
+    amount: float
 
     class Config:
         orm_mode = True
